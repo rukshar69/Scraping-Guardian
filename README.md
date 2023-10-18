@@ -19,13 +19,15 @@ The Guardian API is a valuable resource for anyone who wants to access and use t
 
 We decided to get news titles from 2010 to 2023. The API we're using is **https://content.guardianapis.com/world/bangladesh?from-date={start_date}&api-key={API_KEY}&type=article&page=x**
 
-The API Results are returned as a paginated list, with a default of 10 results. In order to page through the results, you can add the *page* keyword to your query. So, at first we learn the total number of pages by the *pages* key from the json response. Using this page number limit, we create the api urls.
+The API Results are returned as a paginated list, with a default of 10 results. In order to page through the results, you can add the *page* keyword to your query. So, at first we learn the total number of pages by the *pages* key from the json response. Using this page number limit, we create the paginated api urls.
 
-Then we call these api urls using the *requests* library to receive the 10 news article search results for each of the page api url. The results are stored in a list that is further processed to get the news title, category, date, and news-url for each of the news article. These information are saved in a dataframe. 
+Then we call these api urls using the *requests* library to receive the 10 news article search results for each of the page api url. The results are stored in a list that is further processed to get the news title, category, date, and news-url for each of the news article. These information are saved in a dataframe. There are about 1000 Guardian news articles on Bangladesh from 2010 to 2023(till early October)
 
-The code: [guardian_news_scraper.ipynb]()
+The code: [guardian_news_scraper.ipynb](https://github.com/rukshar69/Scraping-Guardian/blob/main/guardian_news_scraper.ipynb)
 
-The saved data: 
+The saved data: [bangladesh-newtitles.csv](https://github.com/rukshar69/Scraping-Guardian/blob/main/bangladesh-newtitles.csv)
 
 # Reference
 
+- [Guardian API Documentataion](https://open-platform.theguardian.com/documentation/)
+- [Scraping Narendra Modi news with GuardianAPI](https://www.youtube.com/watch?v=Nf1U62XxDmU&list=PLRRWaBOk3DqcqqwT3_HpoK_dmR5HW398P&ab_channel=AnalystAdithya)
